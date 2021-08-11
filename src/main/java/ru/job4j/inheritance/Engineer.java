@@ -12,6 +12,10 @@ public class Engineer extends Profession {
         this.skillSpring = skillSpring;
     }
 
+    public Engineer() {
+        super();
+    }
+
     public Engineer readSof() {
         return readSof();
     }

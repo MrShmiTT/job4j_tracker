@@ -5,7 +5,7 @@ public class Diagnosis extends Doctor {
     private int patientsPerDay;
 
     public Diagnosis(int workExperience, int numberOfPatients, String licence, String typeOfPatients, int patientsPerDay) {
-        super(workExperience, numberOfPatients, licence);
+        super();
         this.typeOfPatients = typeOfPatients;
         this.patientsPerDay = patientsPerDay;
     }

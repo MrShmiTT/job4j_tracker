@@ -5,7 +5,7 @@ public class MiddleEngineer extends Engineer {
     private int pointsToSenior;
 
     public MiddleEngineer(String skillJava, String skillSql, String skillSpring, int numberInterns, int pointsToSenior) {
-        super(skillJava, skillSql, skillSpring);
+        super();
         this.numberInterns = numberInterns;
         this.pointsToSenior = pointsToSenior;
     }

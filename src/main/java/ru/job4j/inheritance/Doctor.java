@@ -12,6 +12,10 @@ public class Doctor extends Profession {
         this.licence = licence;
     }
 
+    public Doctor() {
+        super();
+    }
+
     public Doctor heal() {
         return heal();
     }

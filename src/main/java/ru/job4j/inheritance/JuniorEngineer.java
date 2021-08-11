@@ -5,7 +5,7 @@ public class JuniorEngineer extends Engineer {
     private int numberDeletedDb;
 
     public JuniorEngineer(String skillJava, String skillSql, String skillSpring, String skillBugFix, int numberDeletedDb) {
-        super(skillJava, skillSql, skillSpring);
+        super();
         this.skillBugFix = skillBugFix;
         this.numberDeletedDb = numberDeletedDb;
     }
