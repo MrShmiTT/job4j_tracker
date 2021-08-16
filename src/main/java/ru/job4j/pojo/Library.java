@@ -16,25 +16,24 @@ public class Library {
         Book book5 = new Book("Clean code", 666);
         bk[0] = book5;
 
-        for (int i = 0; i < bk.length; i++) {
-            Book b = bk[i];
+        for (Book b : bk) {
             System.out.println(b.getName() + " - " + b.getPages());
         }
 
-        System.out.println("\n=== Replacement 0 to 3 and 3 to 0 ===");
+        System.out.println(System.lineSeparator() + "=== Replacement 0 to 3 and 3 to 0 ===");
         Book b = bk[0];
         bk[0] = bk[3];
         bk[3] = b;
 
-        for (int i = 0; i < bk.length; i++) {
-            b = bk[i];
+        for (Book book : bk) {
+            b = book;
             System.out.println(b.getName() + " - " + b.getPages());
         }
 
-        System.out.println("\n=== Shown only Clean code book ===");
-        for (int i = 0; i < bk.length; i++) {
-            b = bk[i];
-            if (b.getName().equals("Clean code")) {
+        System.out.println(System.lineSeparator() + "=== Shown only Clean code book ===");
+        for (Book book : bk) {
+            b = book;
+            if ("Clean code".equals(b.getName())) {
                 System.out.println(b.getName() + " - " + b.getPages());
             }
         }
