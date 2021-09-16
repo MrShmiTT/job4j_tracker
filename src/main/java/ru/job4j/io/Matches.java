@@ -14,6 +14,7 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine());
             if (matches < 1 || matches > 3 || matches >= count) {
                 System.out.println("Ошибка. Введите число от 1 до 3:");
+                continue;
             }
             turn = !turn;
             count -= matches;
