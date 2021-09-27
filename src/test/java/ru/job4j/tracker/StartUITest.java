@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class StartUITest {
 
-    @Test @Ignore
+    @Test
     public void whenExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -53,7 +53,7 @@ public class StartUITest {
                 new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
-                new ReplaceAction(),
+                new ReplaceAction(out),
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
@@ -69,10 +69,37 @@ public class StartUITest {
                 new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
-                new DeleteAction(),
+                new DeleteAction(out),
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
+    }
+
+    @Test
+    public void whenReplaceItemTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+        String replaceName = "New Test Name";
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
+        );
+        UserAction[] actions = new UserAction[] {
+                new ReplaceAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu" + ln
+                        + "0. Edit Item" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Edit Item ===" + ln
+                        + "Заявка изменена успешно." + ln
+                        + "Menu" + ln
+                        + "0. Edit Item" + ln
+                        + "1. Exit Program" + ln
+        ));
     }
 }
