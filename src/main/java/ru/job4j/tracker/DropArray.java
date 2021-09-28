@@ -1,5 +1,4 @@
 package ru.job4j.tracker;
-// удаление null из массива и создание нового без null через arrays.copyOf
 import java.util.Arrays;
 
 public class DropArray {
