@@ -8,7 +8,6 @@ public class Test {
         products[2] = new Product("Egg", 19);
         for (int i = 0; i < products.length; i++) {
             Product product = products[i];
-//            System.out.println(product.getName());
         }
         products[1] = null;
         for (int i = 0; i < products.length; i++) {
