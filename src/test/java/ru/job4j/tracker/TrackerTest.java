@@ -26,7 +26,6 @@ public class TrackerTest {
         assertThat(result.getName(), is(item.getName()));
     }
 
-
     @Test
     public void whenTestFindAll() {
         Tracker tracker = new Tracker();
