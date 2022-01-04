@@ -5,7 +5,8 @@ public class Doctor extends Profession {
     private int numberOfPatients;
     private String licence;
 
-    public Doctor(String name, String surname, String education, String birthday, int workExperience, int numberOfPatients, String licence) {
+    public Doctor(String name, String surname, String education, String birthday,
+                  int workExperience, int numberOfPatients, String licence) {
         super(name, surname, education, birthday);
         this.workExperience = workExperience;
         this.numberOfPatients = numberOfPatients;
@@ -14,10 +15,6 @@ public class Doctor extends Profession {
 
     public Doctor() {
         super();
-    }
-
-    public Doctor heal() {
-        return heal();
     }
 
     public void writeOnComb() {

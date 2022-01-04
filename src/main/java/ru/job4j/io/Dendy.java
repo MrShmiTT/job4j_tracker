@@ -12,18 +12,23 @@ public class Dendy {
             System.out.println("2. Супер Марио");
             System.out.println("3. Выйти");
             System.out.print("Введите пункт меню, чтобы начать игру: ");
-            int select = Integer.parseInt(input.nextLine());
-            if (select == 3) {
-                System.out.println("Игра завершена.");
-                run = false;
-            } else if (select == 1) {
-                System.out.println("Танчики загружаются...");
-            } else if (select == 2) {
-                System.out.println("Супер марио загружается...");
-            } else {
-                System.out.println("Такой игры нет.");
-            }
-            System.out.println();
+            run = isRun(input, run);
         }
+    }
+
+    private static boolean isRun(Scanner input, boolean run) {
+        int select = Integer.parseInt(input.nextLine());
+        if (select == 3) {
+            System.out.println("Игра завершена.");
+            run = false;
+        } else if (select == 1) {
+            System.out.println("Танчики загружаются...");
+        } else if (select == 2) {
+            System.out.println("Супер марио загружается...");
+        } else {
+            System.out.println("Такой игры нет.");
+        }
+        System.out.println();
+        return run;
     }
 }

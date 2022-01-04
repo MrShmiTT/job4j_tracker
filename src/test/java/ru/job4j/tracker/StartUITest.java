@@ -90,6 +90,10 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        menuAssertOne(out, ln);
+    }
+
+    private void menuAssertOne(Output out, String ln) {
         assertThat(out.toString(), is(
                 "Menu" + ln
                         + "0. Edit Item" + ln
@@ -116,6 +120,10 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        menuAssertTwo(out, one, ln);
+    }
+
+    private void menuAssertTwo(Output out, Item one, String ln) {
         assertThat(out.toString(), is(
                 "Menu" + ln
                         + "0. Show all Items" + ln
@@ -142,6 +150,10 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        menuAssertThree(out, one, ln);
+    }
+
+    private void menuAssertThree(Output out, Item one, String ln) {
         assertThat(out.toString(), is(
                 "Menu" + ln
                         + "0. Find Items by name" + ln
@@ -168,6 +180,10 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        menuAssertFour(out, one, ln);
+    }
+
+    private void menuAssertFour(Output out, Item one, String ln) {
         assertThat(out.toString(), is(
                 "Menu" + ln
                         + "0. Find Item by ID" + ln

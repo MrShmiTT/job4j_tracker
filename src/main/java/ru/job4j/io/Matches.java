@@ -8,6 +8,15 @@ public class Matches {
         System.out.println("Игра 11.");
         boolean turn = true;
         int count = 11;
+        turn = isTurn(input, turn, count);
+        if (!turn) {
+            System.out.println("Выиграл первый игрок");
+        } else {
+            System.out.println("Выиграл второй игрок");
+        }
+    }
+
+    private static boolean isTurn(Scanner input, boolean turn, int count) {
         while (count > 0) {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
@@ -19,14 +28,7 @@ public class Matches {
             turn = !turn;
             count -= matches;
             System.out.println("Осталось: " + count + " спичек" + System.lineSeparator());
-            if (count <= 0) {
-                System.out.println("Спичек не осталось");
-            }
         }
-        if (!turn) {
-            System.out.println("Выиграл первый игрок");
-        } else {
-            System.out.println("Выиграл второй игрок");
-        }
+        return turn;
     }
 }

@@ -4,14 +4,11 @@ public class Surgeon extends Doctor {
     private String surgeonSpecialization;
     private int aliveStatistic;
 
-    public Surgeon(int workExperience, int numberOfPatients, String licence, String surgeonSpecialization, int aliveStatistic) {
+    public Surgeon(int workExperience, int numberOfPatients, String licence,
+                   String surgeonSpecialization, int aliveStatistic) {
         super();
         this.surgeonSpecialization = surgeonSpecialization;
         this.aliveStatistic = aliveStatistic;
-    }
-
-    public Surgeon cut() {
-        return cut();
     }
 
     public void sew() {
