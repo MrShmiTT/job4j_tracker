@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+
 public class ShowAction implements UserAction {
     private final Output out;
 
@@ -15,13 +17,15 @@ public class ShowAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Show all Items ===");
-        Item[] items = tracker.findAll();
-        if (items.length > 0) {
+//        Item[] items = tracker.findAll();
+        List<Item> items = tracker.findAll();
+//        if (items.length > 0) {
+        if (items.size() > 0) {
             for (Item item : items) {
                 out.println(item);
             }
         } else {
-            out.println("Харнилище еще не содержит заявок");
+            out.println("Хранилище еще не содержит заявок");
         }
         return true;
     }
