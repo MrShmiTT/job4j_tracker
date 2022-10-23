@@ -3,11 +3,10 @@ package ru.job4j.early;
 public class PasswordValidator {
     public static String validate(String password) {
         nullAndLengthValidation(password);
-        char[] passChars = password.toCharArray();
-        isLowerCasePresent(passChars);
-        isUpperCasePresent(passChars);
-        isDigitPresent(passChars);
-        isSpecialSymbolPresent(passChars);
+        isLowerCasePresent(password);
+        isUpperCasePresent(password);
+        isDigitPresent(password);
+        isSpecialSymbolPresent(password);
         subStringValidation(password);
         return "Password is valid";
     }
@@ -21,40 +20,48 @@ public class PasswordValidator {
         }
     }
 
-    private static void isLowerCasePresent(char[] passChars) {
-        for (char c : passChars) {
-            if (!Character.isLowerCase(c)) {
-                return;
+    private static void isLowerCasePresent(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isLowerCase(password.charAt(i))) {
+                break;
+            }
+            if (i == password.length() - 1) {
+                throw new IllegalArgumentException("Password must contain at least one lowercase letter");
             }
         }
-        throw new IllegalArgumentException("Password must contain at least one uppercase letter");
     }
 
-    private static void isUpperCasePresent(char[] passChars) {
-        for (char c : passChars) {
-            if (Character.isUpperCase(c)) {
-                return;
+    private static void isUpperCasePresent(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isUpperCase(password.charAt(i))) {
+                break;
+            }
+            if (i == password.length() - 1) {
+                throw new IllegalArgumentException("Password must contain at least one uppercase letter");
             }
         }
-        throw new IllegalArgumentException("Password must contain at least one lowercase letter");
     }
 
-    private static void isDigitPresent(char[] passChars) {
-        for (char c : passChars) {
-            if (Character.isDigit(c)) {
-                return;
+    private static void isDigitPresent(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isDigit(password.charAt(i))) {
+                break;
+            }
+            if (i == password.length() - 1) {
+                throw new IllegalArgumentException("Password must contain at least one digit");
             }
         }
-        throw new IllegalArgumentException("Password must contain at least one digit");
     }
 
-    private static void isSpecialSymbolPresent(char[] passChars) {
-        for (char c : passChars) {
-            if (!Character.isLetterOrDigit(c)) {
-                return;
+    private static void isSpecialSymbolPresent(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            if (!Character.isLetterOrDigit(password.charAt(i))) {
+                break;
+            }
+            if (i == password.length() - 1) {
+                throw new IllegalArgumentException("Password must contain at least one special symbol");
             }
         }
-        throw new IllegalArgumentException("Password must contain at least one special symbol");
     }
 
     private static void subStringValidation(String password) {
