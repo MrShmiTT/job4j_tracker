@@ -23,7 +23,7 @@ public class ShowAction implements UserAction {
                 out.println(item);
             }
         } else {
-            out.println("Харнилище еще не содержит заявок");
+            out.println("Хранилище еще не содержит заявок");
         }
         return true;
     }
